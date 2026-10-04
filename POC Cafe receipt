@@ -1,0 +1,35 @@
+def main():
+    #The main function is the entry point of the program. It prompts the user for the price and quantity of coffee, calculates the subtotal, and prints it formatted to two decimal places.
+    price = float(input("How much is the coffee?"))
+    quantity = int(input("How many cups of coffee would you like?"))
+    subtotal = float(price * quantity)
+    print(f"Subtotal: ${subtotal:.2f}")
+    tax = return_tax(subtotal) 
+    total = calculate_total(subtotal, tax)
+    amount_paid = float(input("Amount paid: $"))
+    Change = change(total, amount_paid)
+#The main function is the entry point of the program. It prompts the user for the price and quantity of coffee, calculates the subtotal, and prints it formatted to two decimal places.
+
+def return_tax(subtotal): 
+    #subtotal has to be runned first as an argument in order to calculate the tax.
+    tax = float(subtotal * 0.08)
+    print(f"Tax: ${tax:.2f}")
+    return tax
+#The return_tax function takes the subtotal as an argument, calculates the tax at 8%, prints it formatted to two decimal places, and returns the tax value.
+# The  reuturn tax is very important because it is used in the calculate_total function to calculate the total amount.
+#The return_tax function allows this section of the function to be reused in other parts of the program if needed.
+
+def calculate_total(subtotal, tax):
+    #Subtotal and tax have to be runned first as arguments in order to calculate the total.
+    total = float(subtotal + tax)
+    print(f"Total: ${total:.2f}")
+    return total
+
+def change (total, amount_paid):
+    #Total and amount_paid have to be runned first as arguments in order to calculate the change.
+    Change = float(amount_paid - total)
+    print(f"Change: ${Change:.2f}")
+    return Change     
+#The calculate_total function takes the subtotal and tax as arguments, calculates the total amount, and prints it formatted to two decimal places.
+main()
+
